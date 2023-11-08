@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<p>测试用例总数  = <%= numTotalTestFiles %></p>
+<p>失败用例数 =<%= numFailedTestFiles %></p>
+<p>成功用例数 = <%= numPassedTestFiles %></p>
+<p>文件总数 = <%= numTotalTests %></p>
+<p>失败文件数 = <%= numFailedTests %></p>
+<p>成功文件数 = <%= numPassedTests %></p>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>文件名</th>
+        <th>测试用例名</th>
+        <th>状态</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (let i = 0; i < testResults.length; i++) { %>
+        <tr>
+            <td><%= testResults[i].fileName %></td>
+            <td><%= testResults[i].testName %></td>
+            <td><%= testResults[i].state %></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
